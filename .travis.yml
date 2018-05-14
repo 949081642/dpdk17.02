@@ -9,17 +9,18 @@ addons:
                         - llvm-toolchain-precise-3.8
                 packages:
                         - gcc
-                        - clang-3.8
+                 
                         - libpopt-dev
                         - libssl-dev
                         - libnuma-dev
 compiler:
         - gcc
-        - clang-3.8
+        
 
 
 install:
        - uname -r
+       - ls /lib/modules
        - cd dpdk-stable-17.05.2
        - sed -i "s/pci_intx_mask_supported(dev)/pci_intx_mask_supported(dev)||true/g" lib/librte_eal/linuxapp/igb_uio/igb_uio.c
        - patch -p 1 < 0001-PATCH-kni-use-netlink-event-for-multicast-driver-par.patch
