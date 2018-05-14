@@ -9,7 +9,7 @@ addons:
                         - llvm-toolchain-precise-3.8
                 packages:
                         - gcc
-                        - kernel-devel kernel-headers                 
+                        - linux-libc-dev                
                         - libpopt-dev
                         - libssl-dev
                         - libnuma-dev
