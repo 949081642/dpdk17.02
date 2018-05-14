@@ -8,6 +8,7 @@ addons:
                         - ubuntu-toolchain-r-test
                         - llvm-toolchain-precise-3.8
                 packages:
+                        - linux-headers-$(uname -r)
                         - gcc
                         - linux-libc-dev                
                         - libpopt-dev
