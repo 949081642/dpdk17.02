@@ -3,18 +3,19 @@ sudo: required
 dist: trusty
 addons:
         apt:
+                update: true
                 sources:
                         - ubuntu-toolchain-r-test
                         - llvm-toolchain-precise-3.8
                 packages:
                         - gcc
-                        - clang-3.8
+!                        - clang-3.8
                         - libpopt-dev
                         - libssl-dev
                         - libnuma-dev
 compiler:
         - gcc
-        - clang-3.8
+ !       - clang-3.8
 
 
 install:
