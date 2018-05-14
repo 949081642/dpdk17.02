@@ -1,0 +1,29 @@
+language: c
+sudo: required
+dist: trusty
+addons:
+        apt:
+                sources:
+                        - ubuntu-toolchain-r-test
+                        - llvm-toolchain-precise-3.8
+                packages:
+                        - gcc
+                        - clang-3.8
+                        - libpopt-dev
+                        - libssl-dev
+                        - libnuma-dev
+compiler:
+        - gcc
+        - clang-3.8
+
+before_install:
+              - chomd +x dpdk-bug.sh
+              - ./dpdk-bug.sh
+install:
+       - make config T=x86_64-native-linuxapp-gcc
+       - make
+       - export RTE_SDK=$PWD
+       
+
+
+
