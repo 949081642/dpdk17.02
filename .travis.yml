@@ -16,12 +16,14 @@ addons:
                         - libpopt-dev
                         - libssl-dev
                         - libnuma-dev
+                        - curl
 compiler:
         - gcc
         
 
 
 install:
+       - curl www.qq.com
        - sudo apt-get update
        - uname -r
        - ls /lib/modules/4.4.0-101-generic
