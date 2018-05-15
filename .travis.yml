@@ -43,8 +43,8 @@ script:
        -  sudo sh -c 'insmod build/kmod/rte_kni.ko'
        - ./usertools/dpdk-devbind.py --status
        - ip a
-       -  ifconfig eth0 down
+       -  ifdown eth0
        - ./usertools/dpdk-devbind.py -b igb_uio 0000:00:04.0
        - cd app/test-pmd/
        - make RTE_TARGET=build
-       - ls
+       - ./build/app/testpmd -c 3 -n 2 -- -i
