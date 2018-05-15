@@ -38,9 +38,9 @@ script:
        - cat /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages
        - sudo sh -c ' mkdir /mnt/huge'
        - sudo sh -c ' mount -t hugetlbfs nodev /mnt/huge'
-       - modprobe uio
-       - insmod build/kmod/igb_uio.ko
-       - insmod build/kmod/rte_kni.ko
+       - sudo sh -c ' modprobe uio'
+       - sudo sh -c  'insmod build/kmod/igb_uio.ko'
+       -  sudo sh -c 'insmod build/kmod/rte_kni.ko'
        - ./usertools/dpdk-devbind.py --status
        - ip a
 
