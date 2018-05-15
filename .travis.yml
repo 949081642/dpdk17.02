@@ -1,6 +1,8 @@
 language: c
-sudo: required
+
 dist: trusty
+sudo: required
+
 addons:
         apt:
                 update: true
@@ -30,10 +32,10 @@ install:
        - export RTE_SDK=$PWD
        
 script:
-       - su
-       - echo 1024 > /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages
+      
+       - sudo echo 1024 > /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages
        - cat /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages
-       - mkdir /mnt/huge
+       - sudo mkdir /mnt/huge
        - mount -t hugetlbfs nodev /mnt/huge
        - modprobe uio
        - insmod build/kmod/igb_uio.ko
