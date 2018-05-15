@@ -33,7 +33,7 @@ install:
        - export RTE_SDK=$PWD
        
 script:
-      
+       - ssh root@192.168.94.143
        - sudo sh -c ' echo 1024 > /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages'
        - cat /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages
        - sudo sh -c ' mkdir /mnt/huge'
