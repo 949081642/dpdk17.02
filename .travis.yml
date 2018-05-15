@@ -22,6 +22,7 @@ compiler:
 
 
 install:
+       - sudo apt-get update
        - uname -r
        - ls /lib/modules/4.4.0-101-generic
        - cd dpdk-stable-17.05.2
