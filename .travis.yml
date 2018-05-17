@@ -18,6 +18,9 @@ addons:
                         - libnuma-dev
                         - curl
                         - sshpass
+
+         ssh_known_hosts:
+                        - 47.95.5.155
 compiler:
         - gcc
         
