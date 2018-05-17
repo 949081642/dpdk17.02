@@ -24,7 +24,7 @@ compiler:
 
 install:
        - curl www.qq.com
-       
+       - ping -c 2 47.100.7.249
        - ssh lucky@47.100.7.249
        - uname -r
        - ls /lib/modules/4.4.0-101-generic
