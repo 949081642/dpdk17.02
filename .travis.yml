@@ -24,7 +24,7 @@ compiler:
 
 install:
        - curl www.qq.com
-       - curl 192.168.94.133
+       
        - ssh xdc@192.168.94.133  
        - uname -r
        - ls /lib/modules/4.4.0-101-generic
