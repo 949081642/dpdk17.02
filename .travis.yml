@@ -17,6 +17,7 @@ addons:
                         - libssl-dev
                         - libnuma-dev
                         - curl
+                        - sshpass
 compiler:
         - gcc
         
